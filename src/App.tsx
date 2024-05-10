@@ -1,46 +1,43 @@
-import { mnemonicNew, mnemonicToPrivateKey } from "@ton/crypto";
-import { TonClient, WalletContractV4 } from "@ton/ton";
+// import { mnemonicNew, mnemonicToPrivateKey } from "@ton/crypto";
+// import { TonClient, WalletContractV4 } from "@ton/ton";
 import {
-  useTonConnectModal,
-  useTonAddress,
-  useTonConnectUI,
-  useTonWallet,
+  // useTonConnectModal,
+  // useTonConnectUI,
   TonConnectButton,
 } from "@tonconnect/ui-react";
-import { useMemo, useState } from "react";
+// import { useMemo, useState } from "react";
 import { useCounterContract } from "./hooks/useCounterContract";
 import { useTonConnect } from "./hooks/useTonConnect";
 
-const transaction: any = {
-  messages: [
-    {
-      address: "UQAhKqciPn5FwrsRjgk_yH6AeD-9vbtBkTtxv1h-1GR-v_hi",
-      amount: "0.05",
-    },
-  ],
-};
+// const transaction: any = {
+//   messages: [
+//     {
+//       address: "UQAhKqciPn5FwrsRjgk_yH6AeD-9vbtBkTtxv1h-1GR-v_hi",
+//       amount: "0.05",
+//     },
+//   ],
+// };
 
 // Create Client
-const client = new TonClient({
-  endpoint: "https://toncenter.com/api/v2/jsonRPC",
-});
+// const client = new TonClient({
+//   endpoint: "https://toncenter.com/api/v2/jsonRPC",
+// });
 
-const mnemonics = await mnemonicNew();
-const keyPair = await mnemonicToPrivateKey(mnemonics);
-const workchain = 0; // Usually you need a workchain 0
-const wallet = WalletContractV4.create({
-  workchain,
-  publicKey: keyPair.publicKey,
-});
-const contract = client.open(wallet);
-const balance: bigint = await contract.getBalance();
+// const mnemonics = await mnemonicNew();
+// const keyPair = await mnemonicToPrivateKey(mnemonics);
+// const workchain = 0; // Usually you need a workchain 0
+// const wallet = WalletContractV4.create({
+//   workchain,
+//   publicKey: keyPair.publicKey,
+// });
+// const contract = client.open(wallet);
+// const balance: bigint = await contract.getBalance();
 
 // Get balance
 
 function App() {
-  const { open } = useTonConnectModal();
+  // const { open } = useTonConnectModal();
 
-  const [tonConnectUI] = useTonConnectUI();
   const { connected } = useTonConnect();
   const { value, address, sendIncrement } = useCounterContract();
 
