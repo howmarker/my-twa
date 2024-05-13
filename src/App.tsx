@@ -62,7 +62,6 @@ function App() {
     <div className="App">
       <div className="Container">
         <TonConnectButton />
-
         <div className="Card">
           <b>Counter Address</b>
           <div className="Hint">{address?.slice(0, 30) + "..."}</div>
